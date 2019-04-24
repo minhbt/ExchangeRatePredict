@@ -51,8 +51,11 @@ namespace OnSolve.EP.Program
             var numberOfSamples = 12;
             services.AddExchangePredict(opts =>
             {
-                opts.Endpoint = Configuration.EndPoint;
-                opts.AppId = Configuration.AppId;
+                //opts.Endpoint = Configuration.EndPoint;
+                //opts.AppId = Configuration.AppId;
+                opts.Endpoint = "https://openexchangerates.org/api/";
+                opts.AppId = "9eedf9bbc7fc40a89dceb195e0780f8c";
+
             });
             var sp = services.BuildServiceProvider();
             var predictor = sp.GetService<IExchangeRatePredictService>();

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using OnSolve.EP.Models.API;
+using OnSolve.EP.Models.Business;
 using OnSolve.EP.Models.DTO;
 using OnSolve.EP.SDK;
 using OnSolve.EP.SDK.OpenExchangeRate;
@@ -15,6 +16,7 @@ namespace OnSolve.EP.Services
     {
         private readonly HttpClient _httpClient;
         private readonly OpenExchangeRateConfig _configuration;
+        //private readonly string _url;
 
         public ExchangeRateSourceService(IHttpClientFactory httpClientFactory, IOptions<OpenExchangeRateConfig> options)
         {
@@ -26,17 +28,20 @@ namespace OnSolve.EP.Services
 
             _httpClient = httpClientFactory.CreateClient();
             _httpClient.BaseAddress = new Uri(_configuration.Endpoint);
+
         }
 
 
-        public async Task<ExchangeRateDto> GetHistorical(
+        public async Task<ExchangeRateBO> GetHistorical(
             ExchangeRateRequest exchangeRateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            ExchangeRateSDK exchangeRateSDK = new ExchangeRateSDK(exchangeRateRequest,_configuration);
-            return await _httpClient.GetAsync<ExchangeRateDto>(exchangeRateSDK.GetHistoricalURL(),
+            ExchangeRateSDK exchangeRateSDK = new ExchangeRateSDK(exchangeRateRequest, _configuration);
+             var url = exchangeRateSDK.GetHistoricalURL();
+
+            return await _httpClient.GetAsync<ExchangeRateBO>(url,
                                                                cancellationToken).ConfigureAwait(false);
         }
             
-       
+      
     }
 }

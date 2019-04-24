@@ -5,10 +5,7 @@ namespace OnSolve.EP.Services
 {
     public class TimeSeriesService:ITimeSeriesService
     {
-        public TimeSeriesService()
-        {
-        }
-
+       
         public IEnumerable<DateTime> MoveBackwardByMonth(DateTime targetDate, int count, bool includeTargetDate)
         {
             var startPoint = includeTargetDate ? 0 : 1;

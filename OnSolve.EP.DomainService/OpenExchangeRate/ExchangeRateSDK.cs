@@ -12,6 +12,7 @@ namespace OnSolve.EP.SDK.OpenExchangeRate
         private  ExchangeRateRequest _Exr;
         private string APP_ID_PARAM = "app_id";
         private readonly OpenExchangeRateConfig _configuration;
+        private string _Url = string.Empty;
 
         public ExchangeRateSDK(ExchangeRateRequest exchangeRateRequest, OpenExchangeRateConfig config)
         {
@@ -21,17 +22,20 @@ namespace OnSolve.EP.SDK.OpenExchangeRate
 
         public string GetHistoricalURL()
         {
-            var dateStr = _Exr.Date.ToString("yyyy-MM-dd", CultureInfo.CreateSpecificCulture("us"));
-            var @params = new Dictionary<string, string>
+            if(string.IsNullOrEmpty(this._Url)) {
+                var dateStr = _Exr.Date.ToString("yyyy-MM-dd", CultureInfo.CreateSpecificCulture("en-US"));
+                var @params = new Dictionary<string, string>
                 {
                     { "base", _Exr.Base },
                     { "symbols", string.Join(",", _Exr.TargetCurrencies) }
                 };
-            string url = BuildUrl(
-                $"historical/{dateStr}.json",
-                @params);
+                this._Url = BuildUrl(
+                    $"historical/{dateStr}.json",
+                    @params);
 
-            return url;
+            }
+
+            return this._Url;
         }
 
        

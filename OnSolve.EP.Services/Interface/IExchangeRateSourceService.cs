@@ -1,14 +1,13 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using OnSolve.EP.Models.API;
-using OnSolve.EP.Models.DTO;
+using OnSolve.EP.Models.Business;
 
 namespace OnSolve.EP.Services
 {
     public  interface IExchangeRateSourceService
     {
-        Task<ExchangeRateDto> GetHistorical(
+        Task<ExchangeRateBO> GetHistorical(
             ExchangeRateRequest exchangeRateRequest,
             CancellationToken cancellationToken = default(CancellationToken));
     }
