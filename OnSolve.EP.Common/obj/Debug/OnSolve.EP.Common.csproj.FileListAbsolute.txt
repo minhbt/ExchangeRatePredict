@@ -1,0 +1,10 @@
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/bin/Debug/OnSolve.EP.Common.dll
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/bin/Debug/OnSolve.EP.Common.pdb
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/bin/Debug/Newtonsoft.Json.dll
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/bin/Debug/System.Net.Http.dll
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/bin/Debug/Newtonsoft.Json.xml
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/obj/Debug/OnSolve.EP.Common.csprojAssemblyReference.cache
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/obj/Debug/OnSolve.EP.Common.csproj.CoreCompileInputs.cache
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/obj/Debug/OnSolve.EP.Common.csproj.CopyComplete
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/obj/Debug/OnSolve.EP.Common.dll
+/Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Common/obj/Debug/OnSolve.EP.Common.pdb
