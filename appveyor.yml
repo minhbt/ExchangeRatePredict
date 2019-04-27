@@ -7,5 +7,5 @@ before_build:
 
 #package Web Application Build 
 build:
-verbosity: minimal
-publish_wap: true
+ verbosity: minimal
+ publish_wap: true
