@@ -1,7 +1,9 @@
-configuration: Realse
-
 pull_request:
  do_not_increase_build_number: true
+image: Visual Studio 2017 Preview
+configuration: Release
+platform: Any CPU
+clone_depth: 1
 
 #Resotre Nuget package before running MSBuil
 before_build:
@@ -11,3 +13,21 @@ before_build:
 build:
  verbosity: minimal
  publish_wap: true
+ 
+ 
+ build_script:
+- ps: >-
+    dotnet restore ./dotnet-exchange-predict.sln
+
+    dotnet build ./dotnet-exchange-predict.sln
+
+    dotnet pack ./dotnet-exchange-predict.sln --output ./artifacts
+test_script:
+- ps: >-
+    dotnet test ./test/dotnet-exchange-predict.Test
+
+    dotnet test ./test/dotnet-exchange-predict.Mediator.Test
+artifacts:
+- path: '**/src/**/artifacts/*.nupkg'
+  name: Nuget
+deploy: off
