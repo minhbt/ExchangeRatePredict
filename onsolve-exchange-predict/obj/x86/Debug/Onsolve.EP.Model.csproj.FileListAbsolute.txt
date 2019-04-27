@@ -1,5 +1,0 @@
-/Users/minhbui/DotNetProject/onsolve-exchange-predict/onsolve-exchange-predict/obj/x86/Debug/Onsolve.EP.Model.csproj.CoreCompileInputs.cache
-/Users/minhbui/DotNetProject/onsolve-exchange-predict/onsolve-exchange-predict/bin/Debug/OnSolve.EP.Modules.dll
-/Users/minhbui/DotNetProject/onsolve-exchange-predict/onsolve-exchange-predict/bin/Debug/OnSolve.EP.Modules.pdb
-/Users/minhbui/DotNetProject/onsolve-exchange-predict/onsolve-exchange-predict/obj/x86/Debug/OnSolve.EP.Modules.dll
-/Users/minhbui/DotNetProject/onsolve-exchange-predict/onsolve-exchange-predict/obj/x86/Debug/OnSolve.EP.Modules.pdb
