@@ -1,5 +1,7 @@
 configuration: Realse
 
+pull_request:
+ do_not_increase_build_number: true
 
 #Resotre Nuget package before running MSBuil
 before_build:
