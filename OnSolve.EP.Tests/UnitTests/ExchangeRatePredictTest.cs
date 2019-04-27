@@ -67,15 +67,17 @@ namespace OnSolve.EP.Tests.UnitTests
 
                 };
 
-                exchangeRatesResource.Setup(t =>
+                var exR=exchangeRatesResource.Setup(t =>
                         t.GetHistorical(new Models.API.ExchangeRateRequest
                         {
-                      Date=  date,
-                        Base=    It.IsAny<string>(),
-                        TargetCurrencies=    It.IsAny<string[]>(),
+                            Date = date,
+                            Base = It.IsAny<string>(),
+                            TargetCurrencies = It.IsAny<string[]>(),
 
-                }, It.IsAny<CancellationToken>()))
-                     .ReturnsAsync(exChangeRate);
+                        }, It.IsAny<CancellationToken>()));
+                //.ReturnsAsync(exChangeRate);
+
+                exR.ReturnsAsync(exchangeRate);
             }
 
             regressionEquationFactory
