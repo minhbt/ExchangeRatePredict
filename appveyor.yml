@@ -1,23 +1,11 @@
-version: 1.0.{build}
-pull_requests:
-  do_not_increment_build_number: true
-image: Visual Studio 2017 Preview
-configuration: Release
-platform: Any CPU
-clone_depth: 1
-build_script:
-- ps: >-
-    dotnet restore ./onsolve-exchange-predict.sln
+configuration: Realse
 
-    dotnet build ./onsolve-exchange-predict.sln
 
-    dotnet pack ./onsolve-exchange-predict.sln --output ./artifacts
-test_script:
-- ps: >-
-    dotnet test ./test/onsolve-exchange-predict.Test
+#Resotre Nuget package before running MSBuil
+before build:
+- Nuget reasore
 
-    dotnet test ./test/onsolve-exchange-predict.Mediator.Test
-artifacts:
-- path: '**/src/**/artifacts/*.nupkg'
-  name: Nuget
-deploy: off
+#package Web Application Build 
+build:
+verbosity: minimal
+publish_wap: true
