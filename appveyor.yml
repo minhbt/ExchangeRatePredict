@@ -3,7 +3,7 @@ configuration: Realse
 
 #Resotre Nuget package before running MSBuil
 before build:
-- Nuget reasore
+- nuget restore
 
 #package Web Application Build 
 build:
