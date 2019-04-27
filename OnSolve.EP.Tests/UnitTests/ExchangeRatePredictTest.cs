@@ -68,7 +68,8 @@ namespace OnSolve.EP.Tests.UnitTests
                 };
 
                 exchangeRatesResource.Setup(t =>
-                        t.GetHistorical(new Models.API.ExchangeRateRequest {
+                        t.GetHistorical(new Models.API.ExchangeRateRequest
+                        {
                       Date=  date,
                         Base=    It.IsAny<string>(),
                         TargetCurrencies=    It.IsAny<string[]>(),

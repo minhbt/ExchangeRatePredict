@@ -6,3 +6,11 @@
 /Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.pdb
 /Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.Resource1.resources
 /Users/minhbui/Projects/minhbt/ExchangeRatePredict/onsolve-exchange-predict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.csproj.GenerateResource.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/bin/Debug/OnSolve.EP.Resources.dll
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/bin/Debug/OnSolve.EP.Resources.pdb
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.csprojAssemblyReference.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.Resource1.resources
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.csproj.GenerateResource.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.csproj.CoreCompileInputs.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.dll
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Resources/obj/Debug/OnSolve.EP.Resources.pdb

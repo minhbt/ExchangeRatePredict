@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82B859D0-15DF-458F-B5A6-F0D2B588C65D}</ProjectGuid>
+    <ProjectGuid>{0CC47A54-6284-422B-8175-5D38986D2912}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>OnSolve.EP.Services</RootNamespace>
-    <AssemblyName>OnSolve.EP.Services</AssemblyName>
+    <RootNamespace>OnSolve.EP.SDK</RootNamespace>
+    <AssemblyName>OnSolve.EP.SDK</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -28,13 +28,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Numerics.Vectors">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -48,19 +58,6 @@
     <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\5.18.1\lib\mono\xbuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Annotations">
-      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="Microsoft.Extensions.Configuration">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
     </Reference>
@@ -79,37 +76,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceCollectionExtensions.cs" />
-    <Compile Include="Interface\ITimeSeriesService.cs" />
-    <Compile Include="Interface\IExchangeRatePredictService.cs" />
-    <Compile Include="ExchangeRatePredictService.cs" />
-    <Compile Include="Interface\IExchangeRateSourceService.cs" />
-    <Compile Include="ExchangeRateSourceService.cs" />
-    <Compile Include="TimeSeriesService.cs" />
+    <Compile Include="OpenExchangeRate\Interface\IExchangeRateSDK.cs" />
+    <Compile Include="OpenExchangeRate\Configuration \OpenExchangeRateConfig.cs" />
+    <Compile Include="ExchangeRateSDK.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Folder Include="OpenExchangeRate\" />
+    <Folder Include="OpenExchangeRate\Configuration \" />
+    <Folder Include="OpenExchangeRate\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnSolve.EP.Models\OnSolve.EP.Models.csproj">
       <Project>{5DF52E27-DE38-4FE7-A0F5-3F521F87BDF5}</Project>
       <Name>OnSolve.EP.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Onsolve.EP.Repository\Onsolve.EP.Repository.csproj">
-      <Project>{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}</Project>
-      <Name>Onsolve.EP.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.Common\OnSolve.EP.Common.csproj">
-      <Project>{3D1BBB96-3981-46DC-90BC-D678AF9EB9CF}</Project>
-      <Name>OnSolve.EP.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.SDK\OnSolve.EP.SDK.csproj">
-      <Project>{0CC47A54-6284-422B-8175-5D38986D2912}</Project>
-      <Name>OnSolve.EP.SDK</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

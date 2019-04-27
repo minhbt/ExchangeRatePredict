@@ -64,8 +64,8 @@
       <Project>{82B859D0-15DF-458F-B5A6-F0D2B588C65D}</Project>
       <Name>OnSolve.EP.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.DomainService\OnSolve.EP.SDK.csproj">
-      <Project>{1A359800-7519-48C7-9C97-50E24FAD472B}</Project>
+    <ProjectReference Include="..\OnSolve.EP.SDK\OnSolve.EP.SDK.csproj">
+      <Project>{0CC47A54-6284-422B-8175-5D38986D2912}</Project>
       <Name>OnSolve.EP.SDK</Name>
     </ProjectReference>
   </ItemGroup>

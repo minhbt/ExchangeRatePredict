@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsolve.EP.Repository", "Onsolve.EP.Repository\Onsolve.EP.Repository.csproj", "{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSolve.EP.SDK", "OnSolve.EP.DomainService\OnSolve.EP.SDK.csproj", "{1A359800-7519-48C7-9C97-50E24FAD472B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSolve.EP.Console", "OnSolve.EP.Console\OnSolve.EP.Console.csproj", "{7195A4F8-EF19-438F-AAC5-5329915F190F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSolve.EP.Models", "OnSolve.EP.Models\OnSolve.EP.Models.csproj", "{5DF52E27-DE38-4FE7-A0F5-3F521F87BDF5}"
@@ -24,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CICD", "CICD", "{A0C6B852-F
 		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnSolve.EP.SDK", "OnSolve.EP.SDK\OnSolve.EP.SDK.csproj", "{0CC47A54-6284-422B-8175-5D38986D2912}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -34,10 +34,6 @@ Global
 		{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}.Debug|x86.Build.0 = Debug|x86
 		{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}.Release|x86.ActiveCfg = Release|x86
 		{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}.Release|x86.Build.0 = Release|x86
-		{1A359800-7519-48C7-9C97-50E24FAD472B}.Debug|x86.ActiveCfg = Debug|x86
-		{1A359800-7519-48C7-9C97-50E24FAD472B}.Debug|x86.Build.0 = Debug|x86
-		{1A359800-7519-48C7-9C97-50E24FAD472B}.Release|x86.ActiveCfg = Release|x86
-		{1A359800-7519-48C7-9C97-50E24FAD472B}.Release|x86.Build.0 = Release|x86
 		{7195A4F8-EF19-438F-AAC5-5329915F190F}.Debug|x86.ActiveCfg = Debug|x86
 		{7195A4F8-EF19-438F-AAC5-5329915F190F}.Debug|x86.Build.0 = Debug|x86
 		{7195A4F8-EF19-438F-AAC5-5329915F190F}.Release|x86.ActiveCfg = Release|x86
@@ -62,5 +58,9 @@ Global
 		{1E991175-D48E-4D71-BFB4-D33208EBCD79}.Debug|x86.Build.0 = Debug|Any CPU
 		{1E991175-D48E-4D71-BFB4-D33208EBCD79}.Release|x86.ActiveCfg = Release|Any CPU
 		{1E991175-D48E-4D71-BFB4-D33208EBCD79}.Release|x86.Build.0 = Release|Any CPU
+		{0CC47A54-6284-422B-8175-5D38986D2912}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0CC47A54-6284-422B-8175-5D38986D2912}.Debug|x86.Build.0 = Debug|Any CPU
+		{0CC47A54-6284-422B-8175-5D38986D2912}.Release|x86.ActiveCfg = Release|Any CPU
+		{0CC47A54-6284-422B-8175-5D38986D2912}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
