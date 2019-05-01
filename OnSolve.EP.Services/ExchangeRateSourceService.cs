@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using OnSolve.EP.Models.API;
 using OnSolve.EP.Models.Business;
-using OnSolve.EP.Models.DTO;
 using OnSolve.EP.SDK;
 using OnSolve.EP.SDK.OpenExchangeRate;
 
@@ -36,12 +35,13 @@ namespace OnSolve.EP.Services
             ExchangeRateRequest exchangeRateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             ExchangeRateSDK exchangeRateSDK = new ExchangeRateSDK(exchangeRateRequest, _configuration);
-             var url = exchangeRateSDK.GetHistoricalURL();
+            var url = exchangeRateSDK.GetHistoricalURL();
 
             return await _httpClient.GetAsync<ExchangeRateBO>(url,
                                                                cancellationToken).ConfigureAwait(false);
         }
-            
-      
+
+
+
     }
 }

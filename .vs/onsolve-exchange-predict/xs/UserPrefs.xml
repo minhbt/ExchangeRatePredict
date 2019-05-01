@@ -1,0 +1,52 @@
+﻿<Properties StartupConfiguration="{7195A4F8-EF19-438F-AAC5-5329915F190F}|Default">
+  <MonoDevelop.Ide.ItemProperties.OnSolve.EP.Console PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OnSolve.EP.Tests/UnitTests/ExchangeRateSourceTest.cs">
+    <Files>
+      <File FileName="OnSolve.EP.Tests/UnitTests/ExchangeRateSourceTest.cs" Line="19" Column="51" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="dotnet-exchange-predict" expanded="True">
+            <Node name="test" expanded="True">
+              <Node name="ExchangePredict.Tests" expanded="True">
+                <Node name="UnitTests" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="onsolve-exchange-predict" expanded="True">
+            <Node name="OnSolve.EP.Tests" expanded="True">
+              <Node name="UnitTests" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="dotnet-exchange-predict" expanded="True">
+            <Node name="test" expanded="True" />
+          </Node>
+          <Node name="onsolve-exchange-predict" expanded="True">
+            <Node name="OnSolve.EP.Tests" expanded="True">
+              <Node name="OnSolve" expanded="True">
+                <Node name="Test" expanded="True" />
+                <Node name="UnitTests" expanded="True">
+                  <Node name="ExchangeRatePredictTest" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/minhbui/Projects/AsyncExample/AsyncExample/Program.cs" line="23" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <AuthorInfo Name="minhbui" Email="minhbt.dev@gmail.com" Copyright="Minh Bui" Company="" Trademark="" />
+</Properties>

@@ -2,18 +2,31 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{7195A4F8-EF19-438F-AAC5-5329915F190F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>OnSolve.EP.Console</RootNamespace>
     <AssemblyName>OnSolve.EP.Console</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,8 +64,8 @@
       <Project>{82B859D0-15DF-458F-B5A6-F0D2B588C65D}</Project>
       <Name>OnSolve.EP.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.SDK\OnSolve.EP.SDK.csproj">
-      <Project>{0CC47A54-6284-422B-8175-5D38986D2912}</Project>
+    <ProjectReference Include="..\OnSolve.EP.DomainService\OnSolve.EP.SDK.csproj">
+      <Project>{1A359800-7519-48C7-9C97-50E24FAD472B}</Project>
       <Name>OnSolve.EP.SDK</Name>
     </ProjectReference>
   </ItemGroup>

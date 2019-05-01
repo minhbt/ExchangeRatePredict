@@ -19,6 +19,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
@@ -104,7 +110,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
     <Compile Include="Helpers\ExchangeRateGenerator.cs" />
     <Compile Include="Helpers\HttpClientMockHelper.cs" />
     <Compile Include="IntergrationTests\ExchangeRatePredictIntegrationTest.cs" />
@@ -134,17 +139,13 @@
       <Project>{7C7CEF24-10E6-472E-A0F0-BB010688AD4A}</Project>
       <Name>Onsolve.EP.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OnSolve.EP.DomainService\OnSolve.EP.SDK.csproj">
+      <Project>{1A359800-7519-48C7-9C97-50E24FAD472B}</Project>
+      <Name>OnSolve.EP.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnSolve.EP.Common\OnSolve.EP.Common.csproj">
       <Project>{3D1BBB96-3981-46DC-90BC-D678AF9EB9CF}</Project>
       <Name>OnSolve.EP.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.SDK\OnSolve.EP.SDK.csproj">
-      <Project>{0CC47A54-6284-422B-8175-5D38986D2912}</Project>
-      <Name>OnSolve.EP.SDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnSolve.EP.Resources\OnSolve.EP.Resources.csproj">
-      <Project>{1E991175-D48E-4D71-BFB4-D33208EBCD79}</Project>
-      <Name>OnSolve.EP.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,8 @@
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/bin/Release/OnSolve.EP.Common.dll
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/bin/Release/Newtonsoft.Json.dll
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/bin/Release/System.Net.Http.dll
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/bin/Release/Newtonsoft.Json.xml
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/obj/Release/OnSolve.EP.Common.csprojAssemblyReference.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/obj/Release/OnSolve.EP.Common.csproj.CoreCompileInputs.cache
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/obj/Release/OnSolve.EP.Common.csproj.CopyComplete
+/Users/minhbui/ExchangeRatePredict/OnSolve.EP.Common/obj/Release/OnSolve.EP.Common.dll

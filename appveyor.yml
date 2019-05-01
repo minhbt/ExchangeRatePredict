@@ -1,33 +1,14 @@
-pull_request:
- do_not_increase_build_number: true
-image: Visual Studio 2017 Preview
-configuration: Release
-platform: Any CPU
-clone_depth: 1
+assembly_info:
+  patch: false
 
-#Resotre Nuget package before running MSBuil
-before_build:
-- nuget restore
+configuration:
+  - Release
 
-#package Web Application Build 
-build:
- verbosity: minimal
- publish_wap: true
- 
- 
- build_script:
-- ps: >-
-    dotnet restore ./dotnet-exchange-predict.sln
+build_script:
+  - ps: .\build.ps1
 
-    dotnet build ./dotnet-exchange-predict.sln
+test: off
+skip_tags: true
 
-    dotnet pack ./dotnet-exchange-predict.sln --output ./artifacts
-test_script:
-- ps: >-
-    dotnet test ./test/dotnet-exchange-predict.Test
-
-    dotnet test ./test/dotnet-exchange-predict.Mediator.Test
-artifacts:
-- path: '**/src/**/artifacts/*.nupkg'
-  name: Nuget
-deploy: off
+cache:
+  - src\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified

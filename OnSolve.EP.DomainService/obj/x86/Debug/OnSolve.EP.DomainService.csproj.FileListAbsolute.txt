@@ -1,0 +1,5 @@
+/Users/minhbui/DotNetProject/onsolve-exchange-predict/OnSolve.EP.DomainService/bin/Debug/OnSolve.EP.DomainService.dll
+/Users/minhbui/DotNetProject/onsolve-exchange-predict/OnSolve.EP.DomainService/bin/Debug/OnSolve.EP.DomainService.pdb
+/Users/minhbui/DotNetProject/onsolve-exchange-predict/OnSolve.EP.DomainService/obj/x86/Debug/OnSolve.EP.DomainService.csproj.CoreCompileInputs.cache
+/Users/minhbui/DotNetProject/onsolve-exchange-predict/OnSolve.EP.DomainService/obj/x86/Debug/OnSolve.EP.DomainService.dll
+/Users/minhbui/DotNetProject/onsolve-exchange-predict/OnSolve.EP.DomainService/obj/x86/Debug/OnSolve.EP.DomainService.pdb

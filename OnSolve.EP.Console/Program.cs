@@ -17,16 +17,6 @@ namespace OnSolve.EP.Program
 
             var from = string.Empty;
             var to = string.Empty;
-            //if (arguments.ContainsKey(ResourceManagers.FromAgr))
-            //{
-            //    from = arguments[ResourceManagers.FromAgr];
-            //}
-
-            //if (arguments.ContainsKey(ResourceManagers.ToAgr))
-            //{
-            //    to = arguments[ResourceManagers.ToAgr];
-            //}
-
             if (arguments.ContainsKey(FROM_ARG))
             {
                 from = arguments[FROM_ARG];
@@ -37,11 +27,8 @@ namespace OnSolve.EP.Program
                 to = arguments[TO_ARG];
             }
 
-
             if (string.IsNullOrWhiteSpace(from) || string.IsNullOrWhiteSpace(to))
             {
-                //Console.WriteLine(ResourceManagers.mgs_from_to_arg_missing);
-                //return;
                 Console.WriteLine("You must provide \"from\" and \"to\" arguments");
                 return;
             }
@@ -51,11 +38,8 @@ namespace OnSolve.EP.Program
             var numberOfSamples = 12;
             services.AddExchangePredict(opts =>
             {
-                //opts.Endpoint = Configuration.EndPoint;
-                //opts.AppId = Configuration.AppId;
                 opts.Endpoint = "https://openexchangerates.org/api/";
-                opts.AppId = "9eedf9bbc7fc40a89dceb195e0780f8c";
-
+                opts.AppId = "573c0c9d12e14355b304fcf52e240699";
             });
             var sp = services.BuildServiceProvider();
             var predictor = sp.GetService<IExchangeRatePredictService>();

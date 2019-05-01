@@ -10,7 +10,6 @@ using OnSolve.EP.Models.Business;
 using System.Threading;
 using OnSolve.EP.Common.Helpers;
 using FluentAssertions;
-using OnSolve.EP.Models.DTO;
 
 namespace OnSolve.EP.Tests.UnitTests
 {
@@ -57,17 +56,7 @@ namespace OnSolve.EP.Tests.UnitTests
                     }
                 };
 
-                var exChangeRate = new ExchangeRateDto
-                {
-                    Base = baseCurrency,
-                    TimeStamp = date,
-                    Rates = new Dictionary<string, decimal> {
-                        { targetCurrency, rates[date.Month - 1] }
-                    }
-
-                };
-
-                var exR=exchangeRatesResource.Setup(t =>
+                var exR = exchangeRatesResource.Setup(t =>
                         t.GetHistorical(new Models.API.ExchangeRateRequest
                         {
                             Date = date,
@@ -75,7 +64,7 @@ namespace OnSolve.EP.Tests.UnitTests
                             TargetCurrencies = It.IsAny<string[]>(),
 
                         }, It.IsAny<CancellationToken>()));
-                //.ReturnsAsync(exChangeRate);
+             
 
                 exR.ReturnsAsync(exchangeRate);
             }

@@ -1,67 +1,89 @@
-$ErrorActionPreference = "Stop"
+<#
+.SYNOPSIS
+This is a Powershell script to bootstrap a Cake build.
+.DESCRIPTION
+This Powershell script will download NuGet if missing, restore NuGet tools (including Cake)
+and execute your Cake build script with the parameters you provide.
+.PARAMETER Script
+The build script to execute.
+.PARAMETER Target
+The build script target to run.
+.PARAMETER Configuration
+The build configuration to use.
+.PARAMETER Verbosity
+Specifies the amount of information to be displayed.
+.PARAMETER Experimental
+Tells Cake to use the latest Roslyn release.
+.PARAMETER WhatIf
+Performs a dry run of the build script.
+No tasks will be executed.
+.PARAMETER Mono
+Tells Cake to use the Mono scripting engine.
+.PARAMETER SkipToolPackageRestore
+Skips restoring of packages.
+.PARAMETER ScriptArgs
+Remaining arguments are added here.
+.LINK
+http://cakebuild.net
+#>
 
-function DownloadWithRetry([string] $url, [string] $downloadLocation, [int] $retries)
-{
-    while($true)
-    {
-        try
-        {
-            Invoke-WebRequest $url -OutFile $downloadLocation
-            break
-        }
-        catch
-        {
-            $exceptionMessage = $_.Exception.Message
-            Write-Host "Failed to download '$url': $exceptionMessage"
-            if ($retries -gt 0) {
-                $retries--
-                Write-Host "Waiting 10 seconds before retrying. Retries left: $retries"
-                Start-Sleep -Seconds 10
+[CmdletBinding()]
+Param(
+    [string]$Script = "build.cake",
+    [string]$Target = "Default",
+    [ValidateSet("Release", "Debug")]
+    [string]$Configuration = "Release",
+    [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
+    [string]$Verbosity = "Verbose",
+    [switch]$Experimental,
+    [Alias("DryRun","Noop")]
+    [switch]$WhatIf,
+    [switch]$Mono,
+    [switch]$SkipToolPackageRestore,
+    [Parameter(Position=0,Mandatory=$false,ValueFromRemainingArguments=$true)]
+    [string[]]$ScriptArgs
+)
 
-            }
-            else
-            {
-                $exception = $_.Exception
-                throw $exception
-            }
-        }
+Write-Host "Preparing to run build script..."
+
+if(!$PSScriptRoot){
+    $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
+}
+
+$TOOLS_DIR = Join-Path $PSScriptRoot "tools"
+$PACKAGES_CONFIG = Join-Path $TOOLS_DIR "packages.config"
+$CAKE_EXE = Join-Path $TOOLS_DIR "Cake/Cake.exe"
+$NUGET_URL = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+
+# Should we use mono?
+$UseMono = "";
+if($Mono.IsPresent) {
+    Write-Verbose -Message "Using the Mono based scripting engine."
+    $UseMono = "-mono"
+}
+
+
+# Make sure tools folder exists
+if ((Test-Path $PSScriptRoot) -and !(Test-Path $TOOLS_DIR)) {
+    Write-Verbose -Message "Creating tools directory..."
+    New-Item -Path $TOOLS_DIR -Type directory | out-null
+}
+
+# Make sure that packages.config exist.
+if (!(Test-Path $PACKAGES_CONFIG)) {
+    Write-Verbose -Message "Downloading packages.config..."
+    try { (New-Object System.Net.WebClient).DownloadFile("http://cakebuild.net/download/bootstrapper/packages", $PACKAGES_CONFIG) } catch {
+        Throw "Could not download packages.config."
     }
 }
 
-cd $PSScriptRoot
 
-$repoFolder = $PSScriptRoot
-$env:REPO_FOLDER = $repoFolder
-
-$onsolveEPZip="https://github.com/minhbt/ExchangeRatePredict/blob/master/Deliveries/Archive.zip"
-if ($env:EPBUILD_ZIP)
-{
-    $onsolveEPZip=$env:EPBUILD_ZIP
+# Make sure that Cake has been installed.
+if (!(Test-Path $CAKE_EXE)) {
+    Throw "Could not find Cake.exe at $CAKE_EXE"
 }
 
-$buildFolder = ".build"
-$buildFile="$buildFolder\build.ps1"
-
-if (!(Test-Path $buildFolder)) {
-    Write-Host "Downloading epbuild from $onsolveEPZip"
-
-    $tempFolder=$env:TEMP + "\epbuild-" + [guid]::NewGuid()
-    New-Item -Path "$tempFolder" -Type directory | Out-Null
-
-    $localZipFile="$tempFolder\epbuild.zip"
-
-    DownloadWithRetry -url $onsolveEPZip -downloadLocation $localZipFile -retries 6
-
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($localZipFile, $tempFolder)
-
-    New-Item -Path "$buildFolder" -Type directory | Out-Null
-    copy-item "$tempFolder\**\build\*" $buildFolder -Recurse
-
-    # Cleanup
-    if (Test-Path $tempFolder) {
-        Remove-Item -Recurse -Force $tempFolder
-    }
-}
-
-&"$buildFile" @args
+# Start Cake
+Write-Host "Running build script..."
+Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -target=`"$Target`" -configuration=`"$Configuration`" -verbosity=`"$Verbosity`" $UseMono $UseDryRun $UseExperimental $ScriptArgs"
+exit $LASTEXITCODE
