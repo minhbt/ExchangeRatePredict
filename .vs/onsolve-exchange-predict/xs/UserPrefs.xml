@@ -1,39 +1,17 @@
 ﻿<Properties StartupConfiguration="{7195A4F8-EF19-438F-AAC5-5329915F190F}|Default">
   <MonoDevelop.Ide.ItemProperties.OnSolve.EP.Console PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="OnSolve.EP.Tests/UnitTests/ExchangeRateSourceTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="build.cake">
     <Files>
-      <File FileName="OnSolve.EP.Tests/UnitTests/ExchangeRateSourceTest.cs" Line="19" Column="51" />
+      <File FileName="OnSolve.EP.Tests/UnitTests/ExchangeRateSourceTest.cs" Line="39" Column="56" />
+      <File FileName="OnSolve.EP.Console/Program.cs" Line="47" Column="23" />
+      <File FileName="build.cake" Line="36" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="dotnet-exchange-predict" expanded="True">
-            <Node name="test" expanded="True">
-              <Node name="ExchangePredict.Tests" expanded="True">
-                <Node name="UnitTests" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
           <Node name="onsolve-exchange-predict" expanded="True">
-            <Node name="OnSolve.EP.Tests" expanded="True">
-              <Node name="UnitTests" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="dotnet-exchange-predict" expanded="True">
-            <Node name="test" expanded="True" />
-          </Node>
-          <Node name="onsolve-exchange-predict" expanded="True">
-            <Node name="OnSolve.EP.Tests" expanded="True">
-              <Node name="OnSolve" expanded="True">
-                <Node name="Test" expanded="True" />
-                <Node name="UnitTests" expanded="True">
-                  <Node name="ExchangeRatePredictTest" selected="True" />
-                </Node>
-              </Node>
+            <Node name="CICD" expanded="True">
+              <Node name="/Users/minhbui/ExchangeRatePredict/build.cake" selected="True" />
             </Node>
           </Node>
         </State>
